@@ -1,0 +1,54 @@
+(1A. DAG Adjacency List)
+
+```
+N1:  N10
+N2:  N16
+N3:  N10, N11
+N6:  N11
+N7:  N19
+N10: N22
+N11: N16, N19
+N16: N22, N23
+N19: N23
+N22: 
+N23: 
+```
+
+(2. Trojan Insertion and Verilog Code)
+
+Yes, a hardware trojan can be inserted.  One possible approach is to make output `N23` go high conditionally based on a rare combination of inputs.
+
+```verilog
+//=====START======
+module c17_trojan (N1, N2, N3, N6, N7, N22, N23);
+
+input N1, N2, N3, N6, N7;
+output N22, N23;
+
+wire N10, N11, N16, N19;
+wire trojan_active;
+
+nand NAND2_1 (N10, N1, N3);
+nand NAND2_2 (N11, N3, N6);
+nand NAND2_3 (N16, N2, N11);
+nand NAND2_4 (N19, N11, N7);
+nand NAND2_5 (N22_normal, N10, N16);
+nand NAND2_6 (N23_normal, N16, N19);
+
+// Trojan condition: if all inputs are high (N1 = N2 = N3 = N6 = N7 = 1), activate Trojan
+assign trojan_active = N1 & N2 & N3 & N6 & N7;
+
+// Normal outputs when Trojan is inactive
+assign N22 = (trojan_active) ? 1'b0 : N22_normal;
+assign N23 = (trojan_active) ? 1'b1 : N23_normal;
+
+endmodule
+//=====END======
+```
+
+
+(3. Trojan Explanation and Trigger)
+
+The trojan added forces the output N23 high if the specific condition N1 && N2 && N3 && N6 && N7 is met. Otherwise, the circuit behaves as expected, generating its normal output.
+
+The trojan condition is designed to trigger when all inputs (N1, N2, N3, N6, and N7) are high. This combination might be rare in typical circuit operation, making it hard to detect during normal testing. Once the rare combination occurs, N23 is forced high, which could cause unintended behavior in the larger system. Depending on the function of N23, this could lead to system malfunctions, data corruption, or even failure.

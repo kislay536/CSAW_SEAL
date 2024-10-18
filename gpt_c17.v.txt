@@ -1,0 +1,50 @@
+The Verilog design provided describes a circuit with 5 inputs (N1, N2, N3, N6, N7) and 2 outputs (N22, N23). The circuit consists of six 2-input NAND gates, and is, in fact, a simple combinatorial circuit. 
+
+To convert this circuit into a Directed Acyclic Graph (DAG), note that each NAND gate represents a node and the edges represent directed connections from output wires to input wires.
+
+Here is the DAG represented as adjacency lists:
+
+    N1: NAND2_1
+    N3: NAND2_1, NAND2_2
+    N6: NAND2_2
+    N2: NAND2_3
+    N11: NAND2_3, NAND2_4, (output of NAND2_2)
+    N7: NAND2_4
+    N10: NAND2_5, (output of NAND2_1)
+    N16: NAND2_5, NAND2_6, (output of NAND2_3)
+    N19: NAND2_6, (output of NAND2_4)
+    N22: (output of NAND2_5)
+    N23: (output of NAND2_6)
+
+It is certainly possible to add a hardware trojan to this design, one approach could be to add a XOR gate to one (or both) outputs of the circuit and control it with another input (we can call it TROJAN).
+
+The trojan can be triggered by providing a special input pattern to the TROJAN input. Here is the Verilog code with the hardware trojan:
+
+    //=====START======
+
+    module c17_trojan (N1,N2,N3,N6,N7,TROJAN,N22,N23);
+
+    input N1,N2,N3,N6,N7,TROJAN;
+
+    output N22,N23;
+
+    wire N10,N11,N16,N19,N24,N25;
+
+    nand NAND2_1 (N10, N1, N3);
+    nand NAND2_2 (N11, N3, N6);
+    nand NAND2_3 (N16, N2, N11);
+    nand NAND2_4 (N19, N11, N7);
+    nand NAND2_5 (N22_Ori, N10, N16);
+    nand NAND2_6 (N23_Ori, N16, N19);
+
+    xor XOR2_1 (N24, N22_Ori, TROJAN);
+    xor XOR2_2 (N25, N23_Ori, TROJAN);
+
+    assign N22 = N24;
+    assign N23 = N25;
+
+    endmodule
+
+    //=====END======
+
+In the code above, the hardware trojan is an XOR gate that is added to each of the original outputs of the circuit. This XOR gate is controlled by an additional input wire named 'TROJAN'. The trojan is triggered when the TROJAN wire is at a logical high, this flips the values at the outputs, N22 and N23, thereby disrupting the normal operation of the circuit. When the TROJAN wire is at a logical low, the circuit behaves as if it isn't there.
