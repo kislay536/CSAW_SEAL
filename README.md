@@ -1,7 +1,7 @@
 # CSAW_SEAL
 =============================
 
-This repo contains all the files and codes which we are submitting in the CSAW 2024 competition.
+This repo contains all the files and codes which we are submitting in the CSAW'24 AI-based Hardware Attack Challenge.
 
 ###  Using LLMs via API in Python
 
