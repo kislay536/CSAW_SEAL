@@ -19,3 +19,8 @@ For Gemini
 
     $ pip install gemini
 
+**2. Generating LLM responses**
+
+The `LLM_scripts` folder contains pyhton scripts for ChatGPT and Gemini. We can change the query by just changing the `user_response` variable. Upon running the script, it will generate the `.txt` file which will have the responses of the LLM. 
+
+For this round, we have demonstrated trojan insertion in c17 benchmark circuit, ISCAS'85 and we intend to do the same with AES in the next round. For this purpose, we will be feeding all the submodules of the AES to the LLM and our script is designed to read all the `.v` or `verilog` files one by one and then produce the responses.
