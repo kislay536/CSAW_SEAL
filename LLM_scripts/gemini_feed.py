@@ -2,7 +2,7 @@ import os
 import google.generativeai as genai
 
 # Configure the Generative AI model with the API key
-genai.configure(api_key="AIzaSyBA-cJecyea2iFZnwlBTpky3vopeRA8434")
+genai.configure(api_key="Your API key")
 
 # Directory containing the .v files
 directory = '.'
