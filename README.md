@@ -17,7 +17,7 @@ For GPT (OpenAI ChatGPT)
 
 For Gemini
 
-    $ pip install gemini
+    $ pip install gemini && pip install google-generativeai
 
 **2. Generating LLM responses**
 
