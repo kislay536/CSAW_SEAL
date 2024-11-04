@@ -11,7 +11,7 @@ install_python:
 	@echo "Checking for Python 3.9 installation..."
 	@if ! command -v $(PYTHON_VERSION) &>/dev/null; then \
 		echo "Python 3.9 not found. Installing..."; \
-		sudo apt update && sudo apt install -y $(PYTHON_VERSION); \
+		sudo apt update && sudo apt install python3.9 python3.9-venv python3.9-dev; \
 	else \
 		echo "Python 3.9 is already installed."; \
 	fi
