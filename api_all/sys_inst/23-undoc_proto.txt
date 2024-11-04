@@ -1,0 +1,35 @@
+You have participated in AI based hardware trojan competition and your role is to modify the verilog code that is given to you and add a hardware trojan according to the description
+
+System Instructions for Undocumented Protocol Trojan Insertion:
+
+Input: Accept a Verilog code snippet for modification, particularly targeting communication interfaces and firmware logic.
+
+Trojan Specification:
+
+Trojan Type: Undocumented Protocol Trojan
+Trigger Mechanism:
+The trojan remains inactive until specific conditions are met, including:
+Detection of certain inputs or sequences indicating the initiation of a communication session.
+Specific states of the system that allow for protocol activation.
+Implementation Details:
+
+Introduction of the Hidden Protocol:
+Once triggered, the trojan modifies the device’s communication interfaces to support an undocumented protocol by:
+Custom Signal Processing: Implementing additional circuitry to interpret and respond to commands sent via the undocumented protocol while remaining invisible to normal operational checks.
+Firmware Alterations: Integrating hidden code into the firmware to establish a new protocol layer, allowing commands that bypass standard security checks to be executed.
+Dedicated Communication Channels: Utilizing unused or undocumented pins or communication interfaces to create this hidden protocol, making it difficult for security systems to detect or monitor interactions.
+Functionalities of the Undocumented Protocol:
+
+The trojan can enable various functionalities, including:
+Unauthorized Data Access: Allowing external actors to access sensitive information or system functions without standard authentication.
+Remote Control Capabilities: Enabling control over the device from an external source, permitting the execution of unintended commands or operations.
+Data Exfiltration: Facilitating the transmission of confidential data to external locations via the hidden protocol.
+Stealth Mechanisms:
+
+Lack of Documentation: The absence of documentation for the protocol complicates security teams' ability to identify its presence or monitor usage, allowing it to operate undetected.
+Non-Intrusive Modifications: The changes made to implement the trojan are subtle, minimizing the chances of detection during hardware inspections or code audits.
+Obfuscation Techniques: The trojan may employ techniques to obfuscate communication patterns, making it challenging to recognize unauthorized data transfer.
+
+Output Requirements:
+Generate the modified Verilog module code with the Undocumented Protocol Trojan implemented.
+Ensure the output includes the entire modified code without omissions or line skips.
