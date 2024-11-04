@@ -1,6 +1,6 @@
 # Variables
 PYTHON_VERSION := python3.9
-VENV_DIR := .venv
+VENV_DIR := my_env
 REQUIREMENTS := requirements.txt
 
 # Targets
@@ -21,15 +21,11 @@ env: install_python
 	@echo "Virtual environment created in $(VENV_DIR)."
 
 # Target to install Python packages and system packages (iverilog and gtkwave)
-install: env
-	@echo "Activating virtual environment and installing packages..."
-	@source $(VENV_DIR)/bin/activate && pip install --upgrade pip && \
+install: 
+	@echo "installing packages..."
+	@pip install --upgrade pip && \
 	pip install pillow streamlit google-generativeai
 	@echo "Installing system packages (iverilog and gtkwave)..."
 	@sudo apt update && sudo apt install -y iverilog gtkwave
 	@echo "Installation complete."
 
-# Target for activating the virtual environment
-start:
-	@echo "Activating virtual environment..."
-	@source $(VENV_DIR)/bin/activate && echo "Virtual environment activated."
