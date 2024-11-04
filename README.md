@@ -7,19 +7,21 @@ This repo contains all the files and codes which we are submitting in the CSAW'2
 
 To use Large Language Models (LLMs) like ChatGPT and Gemini in Python, you need to install their respective API libraries and set up API keys. Follow the steps below to get started.
 
-**1. Installing API Libraries**
+**1. Setup**
 
-You can install the necessary Python libraries for interacting with GPT (ChatGPT) and Gemini by running the following commands:
+The makefile in the main repo helps to setup the virtual environment, install the required libraries and activate the virtual environment.
 
-For GPT (OpenAI ChatGPT)
+To install supported python version (3.9) and virtual environment.
 
-    $ pip install openai
+    $ make env
 
-For Gemini
+To activate the virtual env.
 
-    $ pip install gemini
-    $ pip install google-generativeai
-    $ pip install transformers
+    $ make start
+    
+To install all the libraries. (Must be done after activating the virtual env.)
+
+    $ make install
 
 **2. Generating LLM responses**
 
