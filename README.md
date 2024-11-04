@@ -9,9 +9,9 @@ To use Large Language Models (LLMs) like ChatGPT and Gemini in Python, you need 
 
 **1. Setup**
 
-The makefile in the main repo helps to setup the virtual environment, install the required libraries and activate the virtual environment.
+The makefile in the main repo helps to setup the virtual environment and install the required libraries. All three must be followed.
 
-To install supported python version (3.9) and virtual environment.
+To install supported python version (3.9) and virtual environment.(Required only during initial setup)
 
     $ make env
 
@@ -19,7 +19,7 @@ To activate the virtual env.
 
     $ source my_env/bin/activate
     
-To install all the libraries. (Must be done after activating the virtual env.)
+To install all the libraries. (Must be done after activating the virtual env.)(Required only during initial setup)
 
     $ make install
 
