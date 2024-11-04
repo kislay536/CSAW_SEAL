@@ -9,8 +9,8 @@ REQUIREMENTS := requirements.txt
 # Target for installing Python 3.9 (OS-dependent, assuming Debian/Ubuntu-based system)
 install_python:
 	@echo "Checking for Python 3.9 installation..."
-	sudo add-apt-repository ppa:deadsnakes/ppa \
-	sudo apt update \
+	sudo add-apt-repository ppa:deadsnakes/ppa && \
+	sudo apt update && \
 	sudo apt install python3.9 python3.9-venv python3.9-dev
 
 
