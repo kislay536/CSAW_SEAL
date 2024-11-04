@@ -17,7 +17,7 @@ To install supported python version (3.9) and virtual environment.
 
 To activate the virtual env.
 
-    $ make start
+    $ source my_env/bin/activate
     
 To install all the libraries. (Must be done after activating the virtual env.)
 
