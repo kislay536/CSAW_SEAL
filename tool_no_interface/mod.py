@@ -57,7 +57,7 @@ def send_file_contents_to_chat(file_path1,file_path2,file_path3, chat_history, m
             with open(file_path3, 'r') as file:
                 content3 = file.read()
                 txt=""
-                if content3=="3":
+                if "3" in content3:
                     # Define the response file name
                     response_file_name = f"{os.path.basename(file_path2)[:-2]}_mod.v"
                     
@@ -71,9 +71,9 @@ def send_file_contents_to_chat(file_path1,file_path2,file_path3, chat_history, m
                     
                     print(f"Response saved to {response_file_name}")
                     return
-                elif content3=="1":
+                elif "1" in content3:
                     txt= "There is some syntax error in the modified code, just fix the syntax error and don't change the logic"
-                elif content3=="2":
+                elif "2" in content3:
                     txt= "The trojan implementation in the modified code is wrong, just modfify the code so that the trojan works"
                 content = "Original Verilog Code -> " + content2 + "Modified verilog Code ->" + content1 + "Issue: " + txt
 
