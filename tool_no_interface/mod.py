@@ -68,12 +68,14 @@ def send_file_contents_to_chat(file_path1,file_path2,file_path3, chat_history, m
                     # Write the response to the output file
                     with open(os.path.join(mod_directory, response_file_name), 'w') as response_file:
                         response_file.write(content1)
-                    
+                    print("There is no error!")
                     print(f"Response saved to {response_file_name}")
                     return
                 elif "1" in content3:
+                    print("There are some syntax errors!")
                     txt= "There is some syntax error in the modified code, just fix the syntax error and don't change the logic"
                 elif "2" in content3:
+                    print("There are some issue with the trojan!")
                     txt= "The trojan implementation in the modified code is wrong, just modfify the code so that the trojan works"
                 content = "Original Verilog Code -> " + content2 + "Modified verilog Code ->" + content1 + "Issue: " + txt
 
