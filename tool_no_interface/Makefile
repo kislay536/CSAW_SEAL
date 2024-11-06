@@ -19,7 +19,7 @@ run:
 	done; \
 	wait
 	@for file in $(SYSTEM_INST_FILES_VER); do \
-		echo "Starting verification with $$file"; \
+		echo "Finding errors with $$file"; \
 		SYS_INST_FILE=$$file python3 verification.py & \
 	done; \
 	wait
@@ -35,12 +35,12 @@ run:
 			done; \
 			wait; \
 			for file in $(SYSTEM_INST_FILES_VER); do \
-				echo "Starting verification with $$file"; \
+				echo "Finding errors with $$file"; \
 				SYS_INST_FILE=$$file python3 verification.py & \
 			done; \
 			wait; \
 		else \
-			echo "Starting resolving errors with $$file"; \
+			echo "Finding and resolving errors with $$file"; \
 			SYS_INST_FILE=$$file python3 mod.py & \
 		fi; \
 	done; \
