@@ -6,6 +6,11 @@ SYSTEM_INST_FILES_SRC = $(wildcard $(SYSTEM_INST_DIR_SRC)/*.txt)
 SYSTEM_INST_FILES_VER = $(wildcard $(SYSTEM_INST_DIR_VER)/*.txt)
 SYSTEM_INST_FILES_MOD = $(wildcard $(SYSTEM_INST_DIR_MOD)/*.txt)
 
+# Define the directories to clean
+CLEAN_DIRS := error_state mod ver
+
+.PHONY: run clean
+
 run:
 	# Initial run and verification for SRC and VER files
 	@for file in $(SYSTEM_INST_FILES_SRC); do \
@@ -40,3 +45,7 @@ run:
 		fi; \
 	done; \
 	wait
+
+clean:
+	rm -rf $(addsuffix /*, $(CLEAN_DIRS))
+	echo "All files in error_state, mod, and ver directories have been deleted."
