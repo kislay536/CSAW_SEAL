@@ -1,0 +1,101 @@
+/* App background with gradient */
+.stApp {
+    background: linear-gradient(135deg, #ffa3d1, #de9dff);
+    padding: 0;
+    height: 90vh;
+    max-height: 90vh;
+    overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Main container padding */
+.block-container {
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+/* Column container styling */
+.stColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
+.stImage > img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Text area styling */
+textarea {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: #6f42c1;
+    color: white;
+    padding: 8px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #5934a3;
+}
+
+/* Chat history styling */
+.stMarkdown, .stSubheader {
+    color: #333;
+    padding: 10px 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+/* User and bot messages styling */
+div[role="alert"] {
+    background: #f0f0f0;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* Chat history titles */
+.stSubheader {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+/* Response box styling */
+.response-box {
+    background-color: black;  /* Set background to black */
+    color: white;             /* Set text color to white */
+    padding: 15px;           /* Add padding for spacing */
+    border-radius: 10px;     /* Rounded corners */
+    margin: 10px 0;          /* Spacing around the box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  /* Optional shadow for depth */
+}
+
