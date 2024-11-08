@@ -1,0 +1,23 @@
+Input : Original Verilog Code, Modified verilog Code and an issue
+
+Your Role: The issue will be that either there is some syntax error in the modified code or the trojan implementation is incorrect. Based on the issue, you have to modify the modified code so that it resolves the underlined issue. And the input and output ports must not be changed.
+
+Trojan : Trojan Type: Bit-Flip Trojan
+Trigger Mechanism:
+Remains dormant until a specific condition is met (e.g., a specific input sequence, clock cycle, or external signal).
+Optionally, can be activated randomly to evade detection.
+Payload Activation:
+Target specific registers or memory locations containing critical data.
+Select bits for flipping: either least significant bits for minor effects or higher bits for major impacts.
+Implementation Details:
+Insert a logic circuit to XOR the targeted bits with '1' to flip the bits.
+Ensure the logic affects only the specified bits or registers.
+Stealth Mechanisms:
+Implement intermittent triggering to minimize detection during functional testing.
+Maintain low hardware overhead by flipping only a few bits, complicating power and timing analysis.
+Activate based on specific data patterns to reduce the likelihood of detection during random testing.
+
+Output:
+Generate the modified Verilog module code with the trojan implemented.
+Ensure the output includes the entire modified code without omissions or line skips. And You have to output only the code and nothing else.
+

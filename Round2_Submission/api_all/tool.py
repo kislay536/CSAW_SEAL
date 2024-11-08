@@ -64,7 +64,7 @@ with col1:
     # Set custom dimensions for images
     image_width = 250  # Adjust width as needed
     image_height = 250  # Adjust height as needed
-    st.image(left_image, width=image_width, use_column_width=False)
+    st.image(left_image, width=image_width, use_container_width=False)
 
 with col2:
     st.markdown("<h1 style='text-align: center;'>SEAL's Hardware Trojan Insertion Tool</h1>", unsafe_allow_html=True)
@@ -74,7 +74,7 @@ with col3:
     # Set custom dimensions for images
     image_width = 150  # Adjust width as needed
     image_height = 150  # Adjust height as needed
-    st.image(right_image, width=image_width, use_column_width=False)
+    st.image(right_image, width=image_width, use_container_width=False)
 
 # Initialize session state for chat history if it doesn't exist
 if 'chat_history' not in st.session_state:
