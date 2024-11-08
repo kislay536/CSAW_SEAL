@@ -35,12 +35,14 @@ Our Tool is mainly organised in two folders i.e. `tool_CLI` and `tool_UI`.
 Inside both these folders, we have 2 tools i.e. Vulnerability Identifier and Trojan Injector.
 Before we do something with the tool, we have to put our design code in the src folder and make sure the folder has only one `.v` file at a time.
 
-**for Tool_CLI **
+for `Tool_CLI`
+
 To use the tools in `1_vulnerability_Identifier`, we have to go to `1_vulnerability_Identifier` and do `make`. then it will generate the DAG and exploitable trojans.
 
 To use the tools in `2_trojan_injector`, we have to go to `2_trojan_injector` and do `make gpt` or `make gemini`. then it will generate the trojan inserted code.
 
-**for Tool_UI **
+for `Tool_UI`
+
 To use the tools in `1_vulnerability_Identifier`, we have to go to `1_vulnerability_Identifier` and do `make`. then it will open a web page and then click on `generate`
 
 To use the tools in `2_trojan_injector`, we have to go to `2_trojan_injector` and do `make`. then it will open a web page and then click on `generate`
